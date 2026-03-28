@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Login - MARVINTECH</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0f1e;
+      color: #e2e8f0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .login-box {
+      background: #1a2235;
+      border: 1px solid #1e2d45;
+      border-radius: 16px;
+      padding: 2.5rem;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 8px 40px rgba(0,102,255,0.15);
+    }
+    .logo { font-size: 1.4rem; font-weight: 900; text-align: center; margin-bottom: 0.4rem; }
+    .logo span { color: #0066ff; }
+    .subtitle { text-align: center; color: #8899aa; font-size: 0.85rem; margin-bottom: 2rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.2rem; }
+    label { font-size: 0.82rem; font-weight: 600; color: #8899aa; }
+    input {
+      background: #0a0f1e; border: 1px solid #1e2d45;
+      border-radius: 10px; padding: 0.75rem 1rem;
+      color: #e2e8f0; font-family: inherit; font-size: 0.95rem;
+      outline: none; transition: border-color 0.2s;
+    }
+    input:focus { border-color: #0066ff; }
+    .btn {
+      width: 100%; padding: 0.8rem; background: #0066ff;
+      color: #fff; border: none; border-radius: 999px;
+      font-weight: 700; font-size: 0.95rem; cursor: pointer;
+      transition: background 0.2s; margin-top: 0.5rem;
+    }
+    .btn:hover { background: #0052cc; }
+    .alert {
+      padding: 0.8rem 1rem; border-radius: 10px;
+      margin-bottom: 1.2rem; font-size: 0.88rem; font-weight: 500;
+      background: rgba(255,80,80,0.12); border: 1px solid rgba(255,80,80,0.3); color: #f87171;
+    }
+    .back { text-align: center; margin-top: 1.2rem; font-size: 0.85rem; color: #8899aa; }
+    .back a { color: #0066ff; }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <div class="logo">MARVIN<span>TECH</span></div>
+    <p class="subtitle">Admin Panel — Sign in to continue</p>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% for category, message in messages %}
+      <div class="alert">{{ message }}</div>
+      {% endfor %}
+    {% endwith %}
+
+    <form method="POST">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter username" required autofocus/>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter password" required/>
+      </div>
+      <button type="submit" class="btn">Sign In</button>
+    </form>
+    <div class="back"><a href="/">&#8592; Back to website</a></div>
+  </div>
+</body>
+</html>
