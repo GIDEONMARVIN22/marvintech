@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+{% block title %}MARVINTECH - Affordable Tech Services & Devices{% endblock %}
+{% block content %}
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">&#9989; Trusted Tech Services in Kenya</div>
+    <h1>Affordable Tech<br/><span>Services & Devices</span></h1>
+    <p>OS installation, software setup, optimization, password unlocking and more — fast, genuine, and at prices that make sense.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/254107975240?text=Hi%20MARVINTECH%2C%20I%20need%20tech%20help!"
+         target="_blank" class="btn btn-whatsapp btn-lg">&#128172; WhatsApp Us Now</a>
+      <a href="/#services" class="btn btn-outline btn-lg">View Services</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item">&#9989; 100% Genuine Software</div>
+      <div class="trust-item">&#9889; Fast Turnaround</div>
+      <div class="trust-item">&#128176; Affordable Prices</div>
+    </div>
+  </div>
+  <div class="hero-visual" aria-hidden="true">
+    <div class="hero-blob"></div>
+    <div class="floating-card fc1">&#128187; OS Installation</div>
+    <div class="floating-card fc2">&#128274; Password Unlock</div>
+    <div class="floating-card fc3">&#128640; Optimization</div>
+    <div class="floating-card fc4">&#128230; MS Office Setup</div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services section" id="services">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-label">What We Do</p>
+      <h2>Our Services</h2>
+      <p class="section-sub">Everything your computer or phone needs — done right, done fast.</p>
+    </div>
+    <div class="services-grid">
+      {% for s in services %}
+      <div class="service-card" data-aos>
+        <div class="service-icon">{{ s.icon }}</div>
+        <h3>{{ s.title }}</h3>
+        <p>{{ s.desc }}</p>
+        <div class="service-footer">
+          <span class="service-price">{{ s.price }}</span>
+          <a href="https://wa.me/254107975240?text=Hi%20MARVINTECH%2C%20I%20need%20help%20with%3A%20{{ s.title | urlencode }}"
+             target="_blank" class="btn btn-sm btn-primary">Book Now</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-us section" id="why-us">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-label">Why Choose Us</p>
+      <h2>The MARVINTECH Difference</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="why-icon">&#128176;</span>
+        <h3>Affordable Prices</h3>
+        <p>We keep our prices low so everyone can access quality tech services without breaking the bank.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">&#9989;</span>
+        <h3>100% Genuine</h3>
+        <p>We only install genuine, licensed software. No pirated copies, no malware, no risks.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">&#9889;</span>
+        <h3>Fast Service</h3>
+        <p>Most jobs done same day. We respect your time and get your device back to you quickly.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">&#128736;</span>
+        <h3>Expert Technicians</h3>
+        <p>Experienced, skilled, and passionate about tech. We handle your device with care.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">&#128222;</span>
+        <h3>Always Reachable</h3>
+        <p>Call or WhatsApp us anytime. We're available Monday to Saturday, 8am to 8pm.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">&#128274;</span>
+        <h3>Safe & Secure</h3>
+        <p>Your data and device are safe with us. We handle everything with full confidentiality.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing section" id="pricing">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-label">Transparent Pricing</p>
+      <h2>Simple, Honest Prices</h2>
+      <p class="section-sub">No hidden charges. What you see is what you pay.</p>
+    </div>
+    <div class="pricing-grid">
+      {% for s in services %}
+      <div class="pricing-row">
+        <span class="pricing-icon">{{ s.icon }}</span>
+        <span class="pricing-name">{{ s.title }}</span>
+        <span class="pricing-price">{{ s.price }}</span>
+        <a href="https://wa.me/254107975240?text=Hi%20MARVINTECH%2C%20I%20need%20help%20with%3A%20{{ s.title | urlencode }}"
+           target="_blank" class="btn btn-sm btn-outline">Book</a>
+      </div>
+      {% endfor %}
+    </div>
+    <p class="pricing-note">&#9432; Final price depends on device condition and complexity. Contact us for a free quote.</p>
+  </div>
+</section>
+
+<!-- MEET THE OWNER -->
+<section class="owner section" id="about">
+  <div class="container">
+    <div class="owner-grid">
+      <div class="owner-img-wrap">
+        <img src="{{ url_for('static', filename='images/owner.jpg') }}" alt="Marvin - Founder of MARVINTECH" class="owner-img"/>
+        <div class="owner-badge">&#128736; Tech Expert</div>
+      </div>
+      <div class="owner-content">
+        <p class="section-label">Meet the Founder</p>
+        <h2>Hi, I'm Marvin</h2>
+        <p class="owner-bio">
+          I'm a passionate tech enthusiast and the brain behind MARVINTECH.
+          I started this brand to make quality tech services accessible and affordable for everyone —
+          students, small businesses, and everyday people who just need their devices to work.
+        </p>
+        <p class="owner-bio">
+          Whether it's installing your OS, unlocking your laptop, or setting up your office software,
+          I handle every job personally with care, speed, and honesty.
+          No overcharging. No shortcuts. Just genuine tech help.
+        </p>
+        <div class="owner-stats">
+          <div class="ostat"><strong>100+</strong><span>Happy Clients</span></div>
+          <div class="ostat"><strong>3+</strong><span>Years Experience</span></div>
+          <div class="ostat"><strong>8</strong><span>Services Offered</span></div>
+        </div>
+        <a href="https://wa.me/254107975240?text=Hi%20Marvin%2C%20I%20need%20tech%20help!"
+           target="_blank" class="btn btn-whatsapp btn-lg">&#128172; Chat with Marvin</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="container">
+    <h2>Ready to fix your device?</h2>
+    <p>WhatsApp us now and get a free quote in minutes.</p>
+    <a href="https://wa.me/254107975240?text=Hi%20MARVINTECH%2C%20I%20need%20tech%20help!"
+       target="_blank" class="btn btn-whatsapp btn-lg">&#128172; WhatsApp: 0107 975 240</a>
+  </div>
+</section>
+
+{% endblock %}

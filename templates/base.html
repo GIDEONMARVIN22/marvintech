@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="MARVINTECH - Affordable tech services and devices. OS installation, software setup, optimization, and more."/>
+  <title>{% block title %}MARVINTECH - Affordable Tech Services{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="/" class="logo">MARVIN<span>TECH</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#why-us">Why Us</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#pricing">Pricing</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+      <a href="https://wa.me/254107975240?text=Hi%20MARVINTECH%2C%20I%20need%20tech%20help!"
+         target="_blank" class="btn btn-whatsapp nav-cta">&#128172; WhatsApp Us</a>
+    </div>
+  </nav>
+
+  <main>{% block content %}{% endblock %}</main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>MARVIN<span>TECH</span></h3>
+        <p>Affordable tech services you can trust.<br/>Fast, genuine, and reliable.</p>
+        <a href="https://wa.me/254107975240?text=Hi%20MARVINTECH%2C%20I%20need%20tech%20help!"
+           target="_blank" class="btn btn-whatsapp">&#128172; Chat on WhatsApp</a>
+      </div>
+      <div class="footer-links">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/#services">OS Installation</a></li>
+          <li><a href="/#services">MS Office Setup</a></li>
+          <li><a href="/#services">Optimization</a></li>
+          <li><a href="/#services">Password Unlock</a></li>
+          <li><a href="/#services">Driver Installation</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>&#128222; 0107 975 240</p>
+        <p>&#128172; WhatsApp: 0107 975 240</p>
+        <p>&#128205; Available: Mon - Sat, 8am - 8pm</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 MARVINTECH. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
