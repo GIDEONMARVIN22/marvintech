@@ -52,8 +52,8 @@ SERVICES = [
     {"id": 6,  "icon": "🛡️", "title": "Genuine & Safe Installation",          "desc": "All our installations are 100% genuine, licensed, and safe. No pirated or malware-infected software.",                                                                        "price": "Included"},
     {"id": 7,  "icon": "💾", "title": "Driver Installation",                  "desc": "Missing drivers causing issues? We install all necessary drivers — graphics, audio, network, and more.",                                                                       "price": "From KSh 200"},
     {"id": 8,  "icon": "🖥️", "title": "Hardware & Device Setup",              "desc": "Printers, external drives, routers, and peripherals — we set up and configure any device.",                                                                                   "price": "From KSh 300"},
-    {"id": 9,  "icon": "🌐", "title": "Website Creation",                     "desc": "Professional websites for businesses, portfolios, schools, and shops. Built with modern HTML, CSS, JavaScript and Python. Mobile-friendly and fast.",                         "price": "From KSh 2,000"},
-    {"id": 10, "icon": "🗄️", "title": "System Development",                   "desc": "Custom management systems for schools, businesses, shops, and more. Student records, inventory, billing, POS — built to fit your exact needs.",                              "price": "From KSh 3,000"},
+    {"id": 9,  "icon": "🌐", "title": "Website Creation",                     "desc": "Professional websites for businesses, portfolios, schools, and shops. Built with modern HTML, CSS, JavaScript and Python. Mobile-friendly and fast.",                         "price": "Contact for quote"},
+    {"id": 10, "icon": "🗄️", "title": "System Development",                   "desc": "Custom management systems for schools, businesses, shops, and more. Student records, inventory, billing, POS — built to fit your exact needs.",                              "price": "Contact for quote"},
 ]
 
 # ===== AUTH DECORATOR =====
