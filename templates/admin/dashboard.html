@@ -104,15 +104,15 @@
         <span>Total Bookings</span>
       </div>
       <div class="stat-card">
-        <strong>{{ bookings | selectattr('status', 'equalto', 'New') | list | length }}</strong>
+        <strong>{{ new_count }}</strong>
         <span>New</span>
       </div>
       <div class="stat-card">
-        <strong>{{ bookings | selectattr('status', 'equalto', 'In Progress') | list | length }}</strong>
+        <strong>{{ prog_count }}</strong>
         <span>In Progress</span>
       </div>
       <div class="stat-card">
-        <strong>{{ bookings | selectattr('status', 'equalto', 'Done') | list | length }}</strong>
+        <strong>{{ done_count }}</strong>
         <span>Done</span>
       </div>
     </div>
@@ -146,7 +146,7 @@
             </td>
             <td>{{ b.service }}</td>
             <td>{{ b.message or '—' }}</td>
-            <td style="white-space:nowrap;color:var(--muted);">{{ b.date }}</td>
+            <td>{{ b.date_str() }}</td>
             <td>
               {% if b.status == 'New' %}
                 <span class="badge badge-new">New</span>
@@ -164,6 +164,10 @@
                   <option value="Done"        {% if b.status == 'Done' %}selected{% endif %}>Done</option>
                 </select>
                 <button type="submit" class="btn-update">Update</button>
+              </form>
+              <form method="POST" action="/admin/booking/{{ b.id }}/delete" style="margin-top:0.4rem;"
+                    onsubmit="return confirm('Delete this booking?')">
+                <button type="submit" class="btn-update" style="background:#ef4444;">Delete</button>
               </form>
             </td>
           </tr>
