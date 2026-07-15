@@ -5,7 +5,7 @@ from datetime import datetime
 import os
 
 app = Flask(__name__)
-app.secret_key = 'marvintech-secret-2026'
+app.secret_key = os.environ.get('SECRET_KEY', 'marvintech-secret-2026')
 
 # ===== DATABASE CONFIG =====
 # On Render, set DATABASE_URL environment variable
@@ -21,8 +21,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 # ===== ADMIN CREDENTIALS =====
-ADMIN_USERNAME = 'marvin'
-ADMIN_PASSWORD = 'marvintech2026'
+ADMIN_USERNAME = os.environ.get('ADMIN_USERNAME', 'marvin')
+ADMIN_PASSWORD = os.environ.get('ADMIN_PASSWORD', 'marvintech2026')
 
 # ===== MODEL =====
 class Booking(db.Model):
